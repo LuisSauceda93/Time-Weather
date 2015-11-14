@@ -1,0 +1,78 @@
+html{
+  font-family: 'Ovo', 'Open Sans', serif;
+  margin: 0;
+  padding: 0;
+}
+h2{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+main{
+  background: rgb(188, 188, 193);
+}
+body{
+  margin: 0;
+  padding: 0;
+  }
+  .card{
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    background-size: cover;
+    padding: .4em;
+    font-family: 'Ovo', cursive;
+    color: white;
+  }
+  .card__header{
+    margin: 0;
+    padding: 0;
+  }
+
+    .card__title{
+      margin: 0;
+      text-align: center;
+      font-size: 2rem;
+    }
+    .card__date{
+      font-size: .7rem;
+      margin: 0;
+      text-align: center;
+    }
+
+  }
+  @media all and (min-width: 28em){
+    .card{
+      background-image: url(img/piedad.jpg);
+      background-position: center;
+    }
+  }
+
+  .card__info{
+    margin: 1.5em;
+    bottom: .4em;
+    left: .4em;
+    text-align: center;
+  }
+  .card__maxt::before{
+    content: "Max: "
+  }
+    .card__maxt{
+      color: rgb(29, 129, 36);
+    }
+  .card__mint::before{
+    content: "Min: "
+  }
+    .card__mint{
+      color: rgb(226, 83, 52)
+    }
+
+  .card__image{
+    display: block;
+    text-align: center;
+  }
+  .card__temp{
+    display: block;
+    font-size: 3rem;
+    line-height: 1;
+  }

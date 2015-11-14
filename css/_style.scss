@@ -1,0 +1,76 @@
+$gutter : .4em;
+
+@import "flex.scss";
+@mixin box-sizing {
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-ms-box-sizing:border-box;
+box-sizing:border-box;
+}
+
+html{
+  font-family: 'Ovo', 'Open Sans', serif;
+}
+h2{
+  margin: 0;
+  text-align: center;
+}
+  .card{
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    background-size: cover;
+    padding: $gutter;
+    font-family: 'Ovo', cursive;
+    color: white;
+    @include box-sizing;
+    @include flexbox;
+    @include justify-content(space-around);
+  }
+
+    .card--mich{
+      background-image:url(img/piedad.jpg);
+    }
+    .card--queretaro{
+      background-image:url(img/queretaro.jpg);
+    }
+    .card__title{
+      margin: 0;
+      text-align: center;
+      font-size: 2rem;
+    }
+    .card__date{
+      font-size: .7rem;
+      margin: 0;
+      text-align: center;
+    }
+
+  @media all and (min-width: 28em){
+    .card{
+      background-image: url(img/clima2.png);
+      background-position: center;
+    }
+}
+  .card__info{
+    position: absolute;
+    bottom: $gutter;
+    left: $gutter;
+    position: absolute;
+    text-align: center;
+  }
+  .card__maxt::before{
+    content: "Max: "
+  }
+  .card__mint::before{
+    content: "Min: "
+  }
+
+  .card__image{
+    display: block;
+    text-align: center;
+  }
+  .card__temp{
+    display: block;
+    font-size: 3rem;
+    line-height: 1;
+  }
