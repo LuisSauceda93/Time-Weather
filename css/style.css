@@ -40,7 +40,7 @@ body{
       text-align: center;
     }
 
-  }
+
   @media all and (min-width: 28em){
     .card{
       background-image: url(img/piedad.jpg);

@@ -39,7 +39,7 @@ cityWeather.main;
         //3: Timeout
       };
 
-      function getCoords (position) {
+      function getCoords (position){
         var lat= position.coords.latitude;
         var lon= position.coords.longitude;
         //sweetAlert("Tu posición es:\n"+lat+ ", "+lon);
@@ -47,6 +47,8 @@ cityWeather.main;
         $.getJSON(API_WEATHER_URL + "lat= "+ lat + "&lon=" + lon, getCurrentWeather);
         };
         function getCurrentWeather(data) {
+
+          cityWeather = {};
           cityWeather.zone=data.name;
           cityWeather.icon=IMG_WEATHER + data.weather[0].icon + ".png";
           cityWeather.temp=data.main.temp - 273.15;
@@ -58,8 +60,8 @@ cityWeather.main;
 
         };
         function activateTemplate(id) {
-            var t = document.querySelector(id);
-            return document.importNode(t.content, true);
+              var t = document.querySelector(id);
+              return document.importNode(t.content, true);
         };
 
         function renderTemplate() {
@@ -67,7 +69,7 @@ cityWeather.main;
             //clone.querySelector("[data-time]").innerHTML = ;
             clone.querySelector("[data-city]").innerHTML = cityWeather.zone;
             $("body").append(clone);
-        }
+        };
 
 
 })();
