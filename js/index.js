@@ -2,6 +2,7 @@
   function () {
 var API_WEATHER_KEY= "a5dbaad62fe7199046e6c6dbf005c544";
 var API_WEATHER_URL= "http://api.openweathermap.org/data/2.5/weather?APPID=" + API_WEATHER_KEY + "&";
+var IMG_WEATHER = "http://openweathermap.org/img/w/";
 
 var cityWeather = {};
 cityWeather.zone;
@@ -41,12 +42,32 @@ cityWeather.main;
       function getCoords (position) {
         var lat= position.coords.latitude;
         var lon= position.coords.longitude;
-        sweetAlert("Tu posición es:\n"+lat+ ", "+lon);
-        $.getJSON(API_WEATHER_URL + "lat= "+ lat + "&lon=" +lon, getCurrentWeather);
-
+        //sweetAlert("Tu posición es:\n"+lat+ ", "+lon);
+        console.log("Tu posición es:\n"+lat+ ", "+lon);
+        $.getJSON(API_WEATHER_URL + "lat= "+ lat + "&lon=" + lon, getCurrentWeather);
+        };
         function getCurrentWeather(data) {
-          console.log(data);
+          cityWeather.zone=data.name;
+          cityWeather.icon=IMG_WEATHER + data.weather[0].icon + ".png";
+          cityWeather.temp=data.main.temp - 273.15;
+          cityWeather.temp_max=data.main.temp_max - 273.15;
+          cityWeather.temp_min=data.main.temp_min - 273.15;
+          cityWeather.main=data.weather[0].main;
 
+          renderTemplate();
+
+        };
+        function activateTemplate(id) {
+            var t = document.querySelector(id);
+            return document.importNode(t.content, true);
+        };
+
+        function renderTemplate() {
+            var clone = activateTemplate("#template--city");
+            //clone.querySelector("[data-time]").innerHTML = ;
+            clone.querySelector("[data-city]").innerHTML = cityWeather.zone;
+            $("body").append(clone);
         }
-      }
+
+
 })();
