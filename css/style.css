@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 html {
   font-size: 150%; }
 
@@ -130,7 +130,7 @@ input[type="submit"] {
   content: "max: "; }
 
 .card__maxt::after {
-  content: "┬║C"; }
+  content: "°C"; }
 
 .card__mint {
   color: #bc2929;
@@ -140,7 +140,7 @@ input[type="submit"] {
   content: "min: "; }
 
 .card__mint::after {
-  content: "┬║C"; }
+  content: "°C"; }
 
 .card__temp {
   display: block;
@@ -148,7 +148,7 @@ input[type="submit"] {
   line-height: 1; }
 
 .card__temp::after {
-  content: " ┬║C";
+  content: " °C";
   font-size: 2rem; }
 
 /*
