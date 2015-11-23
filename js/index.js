@@ -139,7 +139,7 @@
 
   function getWeatherNewCity(data) {
     if(data.cod && data.cod == '404') {
-      alert("Error: No existe esa ciudad en la base de datos")
+      swal("No existe esa ciudad en la base de datos", "Lo sentimos intente nuevamente!", "error");
     }
 
     $.getJSON(API_WORLDTIME + $(nombreNuevaCiudad).val(), function(response) {
