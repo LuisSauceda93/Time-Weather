@@ -57,7 +57,7 @@
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(getCoords, errorFound);
     } else {
-      alert("Tu navegador no soporta GeoLocation");
+      swal("Tu navegador no soporta geolocalización", "Lo sentimos, actualiza tu navegador!", "error");
     }
   };
 
